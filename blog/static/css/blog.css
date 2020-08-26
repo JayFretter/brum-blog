@@ -8,6 +8,9 @@
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    margin: auto;
+    width: 50%;
+    text-align: center;
 }
 
 .content {
