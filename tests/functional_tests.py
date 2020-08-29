@@ -14,4 +14,4 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Jay', self.browser.title)   
 
 if __name__ == '__main__':  
-    unittest.main(warnings='ignore')  
+    unittest.main()  
