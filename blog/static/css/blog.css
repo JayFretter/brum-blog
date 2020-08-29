@@ -1,6 +1,7 @@
 .page-header {
     background-color: #ad8263;
     margin-top: 0;
+    margin-bottom: 0;
     padding: 20px 20px 20px 40px;
 }
 
@@ -11,6 +12,18 @@
     margin: auto;
     width: 50%;
     text-align: center;
+}
+.page-selector {
+    margin: auto;
+    width: 50%;
+}
+
+.goto-page h2, .goto-page h2 a, .goto-page h2 a:visited, .goto-page h2 a:active {
+    color: black;
+    float: left;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .content {

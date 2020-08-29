@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
-from .forms import PostForm
+from .models import Post, CVSection
+from .forms import PostForm, CVSectionForm
 
 # Create your views here.
 
@@ -40,3 +40,28 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def cv_show(request):
+    cv_sections = CVSection.objects.all
+    return render(request, 'blog/cv_show.html', {'cv_sections': cv_sections})
+
+def cv_new(request):
+    if request.method == "POST":
+        form = CVSectionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('cv_show')
+    else:
+        form = CVSectionForm()
+    return render(request, 'blog/cv_edit.html', {'form': form})
+
+def cv_edit(request, pk):
+    cv_section = get_object_or_404(CVSection, pk=pk)
+    if request.method == "POST":
+        form = CVSectionForm(request.POST, instance=cv_section)
+        if form.is_valid():
+            cv_section.save()
+            return redirect('cv_show')
+    else:
+        form = CVSectionForm(instance=cv_section)
+    return render(request, 'blog/cv_edit.html', {'form': form})

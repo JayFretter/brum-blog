@@ -1,0 +1,13 @@
+{% extends 'blog/base_cv.html' %}
+
+{% block content %}
+    {% for cv_section in cv_sections %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'cv_edit' pk=cv_section.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <div class="post">
+            <h2>{{ cv_section.title }}</h2>
+            <p>{{ cv_section.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
