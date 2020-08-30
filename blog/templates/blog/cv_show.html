@@ -5,7 +5,7 @@
         {% if user.is_authenticated %}
             <a class="btn btn-default" href="{% url 'cv_edit' pk=cv_section.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
-        <div class="post">
+        <div class="cv-section">
             <h2>{{ cv_section.title }}</h2>
             <p>{{ cv_section.text|linebreaksbr }}</p>
         </div>

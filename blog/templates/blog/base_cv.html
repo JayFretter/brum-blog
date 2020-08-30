@@ -14,20 +14,18 @@
             {% endif %}
             <h1><a href="/">-JAY FRETTER-</a></h1>
         </div>
-        <div class="page-selector">
-            <div class="goto-page">
-                <h2><a href="/">Blog</a></h2>
+        <div class=page-body>
+            <div class="page-selector">
+                <div class="goto-page">
+                    <h2><a href="/">Blog</a></h2>
+                </div>
+                <div class="goto-page">
+                    <h2><a href="/cv/">CV</a></h2>
+                </div>
             </div>
-            <div class="goto-page">
-                <h2><a href="/cv/">CV</a></h2>
-            </div>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
+            <div class="cv container">
                 {% block content %}
                 {% endblock %}
-                </div>
             </div>
         </div>
     </body>

@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #ad8263;
+    background-color: #07503a;
     margin-top: 0;
     margin-bottom: 0;
     padding: 20px 20px 20px 40px;
@@ -13,21 +13,27 @@
     width: 50%;
     text-align: center;
 }
+
+
 .page-selector {
-    margin: auto;
     width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .goto-page h2, .goto-page h2 a, .goto-page h2 a:visited, .goto-page h2 a:active {
     color: black;
     float: left;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .content {
     margin-left: 40px;
+}
+
+.cv {
+    padding-top: 80px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
@@ -60,3 +66,8 @@ h1, h2, h3, h4 {
 .post h2 a, .post h2 a:visited {
     color: #000000;
 }
+
+.cv-section h2 {
+    text-align: center;
+}
+
