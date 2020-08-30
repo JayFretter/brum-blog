@@ -53,7 +53,7 @@ def cv_new(request):
             return redirect('cv_show')
     else:
         form = CVSectionForm()
-    return render(request, 'blog/cv_edit.html', {'form': form})
+    return render(request, 'blog/cv_edit.html', {'form': form, 'cv_section_pk': 0, 'can_delete': False})
 
 def cv_edit(request, pk):
     cv_section = get_object_or_404(CVSection, pk=pk)
@@ -62,6 +62,15 @@ def cv_edit(request, pk):
         if form.is_valid():
             cv_section.save()
             return redirect('cv_show')
+    else:
+        form = CVSectionForm(instance=cv_section)
+    return render(request, 'blog/cv_edit.html', {'form': form, 'cv_section_pk': pk, 'can_delete': True})
+
+def cv_delete(request, pk):
+    cv_section = get_object_or_404(CVSection, pk=pk)
+    if request.method == "POST":
+        cv_section.delete()
+        return redirect('cv_show')
     else:
         form = CVSectionForm(instance=cv_section)
     return render(request, 'blog/cv_edit.html', {'form': form})

@@ -44,8 +44,27 @@ h1, h2, h3, h4 {
     color: #828282;
 }
 
+.button {
+    background-color: #747474;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 .save {
     float: right;
+    background-color: #008b00;
+}
+
+.delete {
+    float: left;
+    background-color: #cf0707;
 }
 
 .post-form textarea, .post-form input {
