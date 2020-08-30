@@ -16,7 +16,7 @@ def post_detail(request, pk):
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
-        if form.is_valid():
+        if form.is_valid() and request.user.is_authenticated:
             post = form.save(commit=False)
             post.author = request.user
             post.date_published = timezone.now()
@@ -31,7 +31,7 @@ def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
-        if form.is_valid():
+        if form.is_valid() and request.user.is_authenticated:
             post = form.save(commit=False)
             post.author = request.user
             post.date_published = timezone.now()
@@ -43,12 +43,9 @@ def post_edit(request, pk):
 
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
+    if request.user.is_authenticated:
         post.delete()
-        return redirect('post_list')
-    else:
-        form = PostForm(instance=post)
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return redirect('post_list')
 
 def cv_show(request):
     cv_sections = CVSection.objects.all
@@ -57,7 +54,7 @@ def cv_show(request):
 def cv_new(request):
     if request.method == "POST":
         form = CVSectionForm(request.POST)
-        if form.is_valid():
+        if form.is_valid() and request.user.is_authenticated:
             form.save()
             return redirect('cv_show')
     else:
@@ -68,7 +65,7 @@ def cv_edit(request, pk):
     cv_section = get_object_or_404(CVSection, pk=pk)
     if request.method == "POST":
         form = CVSectionForm(request.POST, instance=cv_section)
-        if form.is_valid():
+        if form.is_valid() and request.user.is_authenticated:
             cv_section.save()
             return redirect('cv_show')
     else:
@@ -77,9 +74,6 @@ def cv_edit(request, pk):
 
 def cv_delete(request, pk):
     cv_section = get_object_or_404(CVSection, pk=pk)
-    if request.method == "POST":
+    if request.user.is_authenticated:
         cv_section.delete()
-        return redirect('cv_show')
-    else:
-        form = CVSectionForm(instance=cv_section)
-    return render(request, 'blog/cv_edit.html', {'form': form})
+    return redirect('cv_show')
