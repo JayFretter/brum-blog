@@ -6,4 +6,10 @@
         {{ form.as_p }}
         <button type="submit" class="button save">Save</button>
     </form>
+    {% if can_delete %}
+    <form action="{% url 'post_delete' pk=post_pk %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="button delete">Delete</button>
+    </form>
+    {% endif %}
 {% endblock %}
