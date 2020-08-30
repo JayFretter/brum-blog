@@ -1,29 +1,41 @@
 .page-header {
-    background-color: #07503a;
+    background-color: #15B097;
     margin-top: 0;
-    margin-bottom: 0;
-    padding: 20px 20px 20px 40px;
+    margin-bottom: 0px;
+    padding: 5px 0px 10px 0px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
-    margin: auto;
-    width: 50%;
     text-align: center;
 }
 
 
 .page-selector {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
+    background-color: #513C2C;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 0px 300px 70px 300px;
 }
 
 .goto-page h2, .goto-page h2 a, .goto-page h2 a:visited, .goto-page h2 a:active {
-    color: black;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20pt;
+}
+
+.left {
     float: left;
+}
+
+.right {
+    float: right;
+}
+
+body {
+    background-color: #ebe6ce;
 }
 
 .content {
@@ -88,5 +100,10 @@ h1, h2, h3, h4 {
 
 .cv-section h2 {
     text-align: center;
+}
+
+.cv-section-body {
+    font-size: 16pt;
+    font-family: 'Noto Sans', sans-serif;
 }
 

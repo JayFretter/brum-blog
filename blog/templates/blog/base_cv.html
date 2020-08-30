@@ -4,7 +4,8 @@
         <title>My CV</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
+        <link href="https://fonts.googleapis.com/css?family=Alata" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
@@ -14,19 +15,17 @@
             {% endif %}
             <h1><a href="/">-JAY FRETTER-</a></h1>
         </div>
-        <div class=page-body>
-            <div class="page-selector">
-                <div class="goto-page">
-                    <h2><a href="/">Blog</a></h2>
-                </div>
-                <div class="goto-page">
-                    <h2><a href="/cv/">CV</a></h2>
-                </div>
+        <div class="page-selector">
+            <div class="goto-page left">
+                <h2><a href="/">BLOG</a></h2>
             </div>
-            <div class="cv container">
-                {% block content %}
-                {% endblock %}
+            <div class="goto-page right">
+                <h2><a href="/cv/">CV</a></h2>
             </div>
+        </div>
+        <div class="cv container">
+            {% block content %}
+            {% endblock %}
         </div>
     </body>
 </html>
