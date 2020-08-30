@@ -4,12 +4,12 @@
     <h2>New post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="button save">Save</button>
+        <button id="id_save_post" type="submit" class="button save">Save</button>
     </form>
     {% if can_delete %}
     <form action="{% url 'post_delete' pk=post_pk %}" method="POST">
         {% csrf_token %}
-        <button type="submit" class="button delete">Delete</button>
+        <button id="id_delete_post" type="submit" class="button delete">Delete</button>
     </form>
     {% endif %}
 {% endblock %}
