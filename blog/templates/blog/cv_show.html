@@ -6,7 +6,7 @@
             <a class="btn btn-default" href="{% url 'cv_edit' pk=cv_section.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
         <div class="cv-section">
-            <h2>{{ cv_section.title }}</h2>
+            <h2><b>{{ cv_section.title }}</b></h2>
             <div class="cv-section-body">
                 <p>{{ cv_section.text|linebreaksbr }}</p>
             </div>
